@@ -1,6 +1,6 @@
 # Wordpress with Caddy Server 
- A docker-composed platform for running WordPress with a Caddy server
-
+ Quickly deploy WordPress with a Caddy server using Docker.
+ 
 ## Getting Started
 
 To get your WordPress installation running follow these simple steps.
