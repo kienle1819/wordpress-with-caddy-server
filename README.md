@@ -26,8 +26,7 @@ Run shell command
    ```
 
 #### Uninstall
-
-1. Run shell command
+Run shell command
    ```sh
    ./uninstall.sh
    ```
