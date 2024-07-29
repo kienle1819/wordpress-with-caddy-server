@@ -17,7 +17,8 @@ To get your WordPress installation running follow these simple steps.
 
 Clone the repo
   ```sh
-  git clone https://github.com/kienle1819/wordpress-with-caddy-server.git
+git clone https://github.com/kienle1819/wordpress-with-caddy-server.git
+cd wordpress-with-caddy-server
   ```  
 Modify passwords and variables inside ```.env``` file as you wish
 Run shell command
