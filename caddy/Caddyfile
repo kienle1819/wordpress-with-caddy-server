@@ -26,7 +26,5 @@
 		X-Frame-Options "SAMEORIGIN"
 		X-Content-Type-Options "nosniff"
 	}
-
-	import cache_enabler
 	import wordpress_security
 }
