@@ -1,0 +1,76 @@
+version: "3.9"
+services:
+  caddy:
+    container_name: caddy
+    image: caddy:alpine
+    env_file: .env
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - reverse_proxy
+    volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+      - ./caddy/caddy_data:/data
+      - ./caddy/caddy_config:/config
+      - ./wordpress/html:/var/www/html
+
+  wordpress:
+    image: wordpress:fpm-alpine
+    container_name: wordpress
+    restart: always
+    depends_on:
+      - db
+      - redis
+    volumes:
+      - ./wordpress/html:/var/www/html
+      - ./wordpress/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+    env_file: .env
+    networks:
+      - reverse_proxy
+
+  db:
+    image: mariadb:10.11.6-jammy
+    container_name: db
+    restart: always
+    volumes:
+      - ./wordpress/mysql:/var/lib/mysql
+    env_file: .env
+    networks:
+      - reverse_proxy
+
+  wpcli:
+    depends_on:
+      - db
+      - wordpress
+    image: wordpress:cli
+    container_name: wpcli
+    entrypoint: wp
+    command: "--info"
+    env_file: .env
+    volumes:
+      - ./wordpress/html:/var/www/html
+    networks:
+      - reverse_proxy
+  redis:
+    image: redis:6.2.14
+    container_name: redis
+    restart: always
+    networks:
+      - reverse_proxy
+
+  #elastic:
+  #  image: elasticsearch:7.17.13
+  #  restart: always
+  #  environment:
+  #    discovery.type: single-node
+  #    xpack.security.enabled: false
+  #  ports:
+  #    - 9200:9200
+  #  volumes:
+  #    - ./elastic:/usr/share/elasticsearch/data
+  
+networks:
+  reverse_proxy:
+    external: true

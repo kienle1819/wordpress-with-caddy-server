@@ -1,0 +1,18 @@
+{
+	"sans": [
+		"wp.kienletv.com"
+	],
+	"issuer_data": {
+		"url": "https://acme-v02.api.letsencrypt.org/acme/cert/03f70cc9a29484e3cee32d9c9c10e27fdcea",
+		"ca": "https://acme-v02.api.letsencrypt.org/directory",
+		"renewal_info": {
+			"suggestedWindow": {
+				"start": "2024-09-26T05:55:06Z",
+				"end": "2024-09-28T05:55:06Z"
+			},
+			"_uniqueIdentifier": "kydGmAOpUWiOmNbEQkjbI79YlNI.A_cMyaKUhOPO4y2cnBDif9zq",
+			"_retryAfter": "2024-07-29T12:35:08.656637037Z",
+			"_selectedTime": "2024-09-27T07:14:38Z"
+		}
+	}
+}
