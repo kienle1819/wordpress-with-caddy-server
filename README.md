@@ -1,19 +1,19 @@
-# Wordpress with caddy server 
+# Wordpress with Caddy Server 
  A docker-composed platform for running WordPress with a Caddy server
 
 ## Getting Started
 
 To get your WordPress installation running follow these simple steps.
 
-### Prerequisites
+## Prerequisites
 
 * [Docker](https://www.docker.com/)
 * [Docker Compose](https://docs.docker.com/compose/)
 
 
-### How to
-
-#### Install
+## How to
+---
+### Install
 
 Clone the repo
   ```sh
@@ -22,12 +22,13 @@ cd wordpress-with-caddy-server
   ```  
 Modify passwords and variables inside ```.env``` file as you wish
 Run shell command
-   ```sh
-   ./install.sh
-   ```
+```sh
+./install.sh
+```
+Login domain and setup
 
 #### Uninstall
 Run shell command
-   ```sh
-   ./uninstall.sh
-   ```
+```sh
+./uninstall.sh
+```
