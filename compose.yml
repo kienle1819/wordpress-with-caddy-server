@@ -59,17 +59,6 @@ services:
     restart: always
     networks:
       - reverse_proxy
-
-  #elastic:
-  #  image: elasticsearch:7.17.13
-  #  restart: always
-  #  environment:
-  #    discovery.type: single-node
-  #    xpack.security.enabled: false
-  #  ports:
-  #    - 9200:9200
-  #  volumes:
-  #    - ./elastic:/usr/share/elasticsearch/data
   
 networks:
   reverse_proxy:
