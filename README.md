@@ -1,5 +1,5 @@
-# Wordpress-with-caddy-server 
- A docker-composed based platform for running WordPress with Caddy server
+# Wordpress with caddy server 
+ A docker-composed platform for running WordPress with a Caddy server
 
 ## Getting Started
 
